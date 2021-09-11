@@ -95,7 +95,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Tables       </li>
+            <li class="breadcrumb-item active">Admin Clientes</li>
           </ul>
         </div>
       </div>
@@ -103,22 +103,27 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Tables            </h1>
+            <h1 class="h3 display">Administración de Clientes</h1>
           </header>
+          <div class="row" style="padding: 10px 0px;">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: flex;margin-left: auto;margin-right: 15px;">
+              Nuevo Cliente
+            </button>
+          </div>
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Compact Table</h4>
+                  <h4>Clientes</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-striped table-sm">
                       <thead>
                         <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
+                          <th>ID</th>
+                          <th>Nombres</th>
+                          <th>Apellidos</th>
                           <th>CI</th>
                           <th>Tipo Doc.</th>
                           <th>Nacionalidad</th>
@@ -195,10 +200,10 @@
 
       <!-- Modal Editar -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Cliente</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -206,28 +211,51 @@
             <div class="modal-body">
 
               <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nombre</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Apellido</label>
+                    <input type="text" class="form-control" id="inputPassword4">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Apellido</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Nro. Documento</label>
+                    <input type="text" class="form-control" id="inputPassword4">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Tipo Doc.</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Cédula</option>
+                      <option>Pasaporte</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputPassword4">Nacionalidad</label>
+                    <input type="text" class="form-control" id="inputPassword4">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Documento</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="@gmail.com">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Teléfono</label>
+                    <input type="text" class="form-control" id="inputPassword4">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Tipo Doc.</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputAddress2">Fecha de Nacimiento</label>
+                  <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </select>
+                  </div>  
                 </div>
               </form>
-
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
