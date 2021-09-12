@@ -95,7 +95,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Admin Clientes</li>
+            <li class="breadcrumb-item active">Admin Reglas</li>
           </ul>
         </div>
       </div>
@@ -103,18 +103,18 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Administración de Clientes</h1>
+            <h1 class="h3 display">Administración de Reglas</h1>
           </header>
           <div class="row" style="padding: 10px 0px;">
             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: flex;margin-left: auto;margin-right: 15px;">
-              Nuevo Cliente
+              Nueva Regla
             </button>
           </div>
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>Clientes</h4>
+                  <h4>Reglas de asignación</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -122,28 +122,21 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>Nombres</th>
-                          <th>Apellidos</th>
-                          <th>CI</th>
-                          <th>Tipo Doc.</th>
-                          <th>Nacionalidad</th>
-                          <th>Email</th>
-                          <th>Teléfono</th>
-                          <th>Fecha Nacimiento</th>
+                          <th>Límite Inferior</th>
+                          <th>Límite Superior</th>
+                          <th>Monto</th>
+                          <th>Puntos</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>123</td>
-                          <td>Cédula</td>
-                          <td>Paraguaya</td>
-                          <td>mark@gmail.com</td>
-                          <td>132</td>
-                          <td>12/8/8</td>
+                          <td>0</td>
+                          <td>199.999</td>
+                          <td>5.000</td>
+                          <td>1</td>
+                          
                           <td>
                             <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Editar</button>
                             <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
@@ -151,14 +144,10 @@
                         </tr>
                         <tr>
                           <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td>Cédula</td>
-                          <td>Paraguaya</td>
-                          <td>mark@gmail.com</td>
-                          <td>132</td>
-                          <td>12/8/8</td>
+                          <td>200.000</td>
+                          <td>499.999</td>
+                          <td>3.000</td>
+                          <td>1</td>
                           <td>
                             <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Editar</button>
                             <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
@@ -166,14 +155,10 @@
                         </tr>
                         <tr>
                           <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                          <td>Cédula</td>
-                          <td>Paraguaya</td>
-                          <td>mark@gmail.com</td>
-                          <td>132</td>
-                          <td>12/8/8</td>
+                          <td>500.000</td>
+                          <td>-</td>
+                          <td>2.000</td>
+                          <td>1</td>
                           <td>
                             <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Editar</button>
                             <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
@@ -182,6 +167,11 @@
                       </tbody>
                     </table>
                   </div>
+                </div>
+                <div class="card-footer">
+                  <p>
+                    Nota: La lectura es "Dentro del rango, cada (monto) equivale a (punto) puntos"
+                  </p>
                 </div>
               </div>
             </div>
@@ -203,7 +193,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Cliente</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Regla</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -213,51 +203,30 @@
               <form>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Nombre</label>
-                    <input type="text" class="form-control" id="inputEmail4">
+                    <label for="inputEmail4">Límite Inferior</label>
+                    <input type="number" class="form-control" id="inputEmail4">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Apellido</label>
-                    <input type="text" class="form-control" id="inputPassword4">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="inputPassword4">Nro. Documento</label>
-                    <input type="text" class="form-control" id="inputPassword4">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="inputState">Tipo Doc.</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Cédula</option>
-                      <option>Pasaporte</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="inputPassword4">Nacionalidad</label>
-                    <input type="text" class="form-control" id="inputPassword4">
+                    <label for="inputPassword4">Límite Superior</label>
+                    <input type="number" class="form-control" id="inputPassword4" placeholder="Si se deja vacío, no se tendrá limite">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="@gmail.com">
+                    <label for="inputPassword4">Monto</label>
+                    <input type="number" class="form-control" id="inputPassword4">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Teléfono</label>
-                    <input type="text" class="form-control" id="inputPassword4">
+                    <label for="inputPassword4">Puntos</label>
+                    <input type="number" class="form-control" id="inputPassword4">
                   </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="inputAddress2">Fecha de Nacimiento</label>
-                  <input type="date" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                    </select>
-                  </div>  
                 </div>
               </form>
+              <div>
+                  Nota: La lectura es "Dentro del rango, cada (monto) equivale a (punto) puntos"
+              </div>   
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer">             
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
@@ -270,13 +239,13 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Eliminación de cliente</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Eliminación de Regla</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              Usuario Eliminado
+              Regla Eliminada
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
