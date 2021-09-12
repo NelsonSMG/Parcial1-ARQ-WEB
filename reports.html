@@ -48,7 +48,7 @@
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li><a href="index.html"> <i class="icon-home"></i>Home                             </a></li>
             <li><a href="forms.html"> <i class="icon-form"></i>Forms                             </a></li>
-            <li class="active"><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts                             </a></li>
+            <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts                             </a></li>
             <li><a href="tables.html"> <i class="icon-grid"></i>Tables                             </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
@@ -144,66 +144,69 @@
           </div>
         </nav>
       </header>
-      <!-- Breadcrumb-->
-      <div class="breadcrumb-holder">
-        <div class="container-fluid">
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Canje       </li>
-          </ul>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">USO DE PUNTOS</a>
+            <a class="nav-link" id="nav-bolsa-tab" data-toggle="tab" href="#nav-bolsa" role="tab" aria-controls="nav-profile" aria-selected="false">BOLSA DE PUNTOS</a>
+            <a class="nav-link" id="nav-vence-tab" data-toggle="tab" href="#nav-vence" role="tab" aria-controls="nav-vence" aria-selected="false">VENCIMIENTO</a>
+            <a class="nav-link" id="nav-client-tab" data-toggle="tab" href="#nav-client" role="tab" aria-controls="nav-client" aria-selected="false">CLIENTES</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Buscar por</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Concepto de uso</a>
+                    <a class="dropdown-item" href="#">Fecha de uso</a>
+                    <a class="dropdown-item" href="#">Cliente</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-bolsa" role="tabpanel" aria-labelledby="nav-bolsa-tab">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Buscar por</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Cliente</a>
+                    <a class="dropdown-item" href="#">Rango de puntos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-vence" role="tabpanel" aria-labelledby="nav-vence-tab">
+                <p>No tiene filtros</p>
+            </div>
+            <div class="tab-pane fade" id="nav-client" role="tabpanel" aria-labelledby="nav-client-tab">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Buscar por</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Nombre</a>
+                    <a class="dropdown-item" href="#">Apellido</a>
+                    <a class="dropdown-item" href="#">Cuempleaños</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <section class="charts">
-        <div class="container-fluid">
-          <!-- Page Header-->
-          <header> 
-            <h1 class="h3 display">Canjes            </h1>
-          </header>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card line-chart-example">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Vale de consumicion</h4>
-                </div>
-                <div class="card-body">
-                  <h5>Vale de GS 200.000 en bebidas BARATOE</h5>
-                  <a href="exchange.html"><img src="img/baratote.png" alt="coleman"></a>
-                  <h1>2.500 Puntos</h1>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card bar-chart-example">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Vale de descuento</h4>
-                </div>
-                <div class="card-body">
-                  <h5>Perfume King CHARM 45% menos</h5>
-                  <a href="exchange.html"><img src="img/charme.jpg" alt="coleman"></a>
-                  <h1>7.500 Puntos</h1>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card bar-chart-example">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Vale de Premio</h4>
-                </div>
-                <div class="card-body">
-                  <h5>Calzado deportivo PUMA</h5>
-                  <a href="exchange.html"><img src="img/calzado.jpg" alt="coleman"></a>
-                  <h1>8.500 Puntos</h1>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div style="text-align: center">
+            <button type="button" class="btn btn-success">Generar reporte</button>
         </div>
-      </section>
       <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <p>System Client &copy; 2021</p>
+              <p>Your company &copy; 2017-2020</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external">Bootstrapious</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
             </div>
           </div>
         </div>
@@ -217,7 +220,7 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/charts-custom.js"></script>
+    <script src="js/charts-home.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
