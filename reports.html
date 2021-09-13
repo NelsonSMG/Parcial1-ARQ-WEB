@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Premios</title>
+    <title>Reportes</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -77,62 +77,78 @@
           </div>
         </nav>
       </header>
-      <body>
-        <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">USO DE PUNTOS</a>
-            <a class="nav-link" id="nav-bolsa-tab" data-toggle="tab" href="#nav-bolsa" role="tab" aria-controls="nav-profile" aria-selected="false">BOLSA DE PUNTOS</a>
-            <a class="nav-link" id="nav-vence-tab" data-toggle="tab" href="#nav-vence" role="tab" aria-controls="nav-vence" aria-selected="false">VENCIMIENTO</a>
-            <a class="nav-link" id="nav-client-tab" data-toggle="tab" href="#nav-client" role="tab" aria-controls="nav-client" aria-selected="false">CLIENTES</a>
-            </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Buscar por</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Concepto de uso</a>
-                    <a class="dropdown-item" href="#">Fecha de uso</a>
-                    <a class="dropdown-item" href="#">Cliente</a>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-bolsa" role="tabpanel" aria-labelledby="nav-bolsa-tab">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Buscar por</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Cliente</a>
-                    <a class="dropdown-item" href="#">Rango de puntos</a>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="nav-vence" role="tabpanel" aria-labelledby="nav-vence-tab">
-                <p>No tiene filtros</p>
-            </div>
-            <div class="tab-pane fade" id="nav-client" role="tabpanel" aria-labelledby="nav-client-tab">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Buscar por</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Nombre</a>
-                    <a class="dropdown-item" href="#">Apellido</a>
-                    <a class="dropdown-item" href="#">Cuempleaños</a>
-                    </div>
-                </div>
-            </div>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Reportes       </li>
+          </ul>
         </div>
-        <div style="text-align: center">
-            <button type="button" class="btn btn-success">Generar reporte</button>
+      </div>
+      <section>
+        <div class="container-fluid">
+          <!-- Page Header-->
+          <header> 
+            <h1 class="h3 display">Reportes            </h1>
+          </header>
+          <div class="card text-center">
+            <div class="card-header">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">USO DE PUNTOS</a>
+                    <a class="nav-link" id="nav-bolsa-tab" data-toggle="tab" href="#nav-bolsa" role="tab" aria-controls="nav-profile" aria-selected="false">BOLSA DE PUNTOS</a>
+                    <a class="nav-link" id="nav-vence-tab" data-toggle="tab" href="#nav-vence" role="tab" aria-controls="nav-vence" aria-selected="false">VENCIMIENTO</a>
+                    <a class="nav-link" id="nav-client-tab" data-toggle="tab" href="#nav-client" role="tab" aria-controls="nav-client" aria-selected="false">CLIENTES</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <select class="custom-select">
+                            <option selected>Seleccione el filtro</option>
+                            <option value="1">Concepto de uso</option>
+                            <option value="2">Fecha de uso</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+                    <div class="tab-pane fade" id="nav-bolsa" role="tabpanel" aria-labelledby="nav-bolsa-tab">
+                        <select class="custom-select">
+                            <option selected>Seleccione el filtro</option>
+                            <option value="1">Cliente</option>
+                            <option value="2">Rango de puntos</option>
+                        </select> 
+                    </div>
+                    <div class="tab-pane fade" id="nav-vence" role="tabpanel" aria-labelledby="nav-vence-tab">
+                        <p>No tiene filtros</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-client" role="tabpanel" aria-labelledby="nav-client-tab">
+                        <select class="custom-select">
+                            <option selected>Seleccione el filtro</option>
+                            <option value="1">Nombre</option>
+                            <option value="2">Apellido</option>
+                            <option value="2">Cumpleaños</option>
+                        </select> 
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">Generar reporte</a>
+            </div>
+          </div>
+          <!--<div class="row">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Ingrese monto a convertir.</h4>
+                </div>
+                <div class="card-body">
+                 
+                </div>
+              </div>
+            </div>-->
+          </div>
         </div>
-      </body>
+      </section>
       <footer class="main-footer">
         <div class="container-fluid">
           <div class="row">
@@ -151,7 +167,6 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/charts-home.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
