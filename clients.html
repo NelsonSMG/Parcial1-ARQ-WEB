@@ -93,7 +93,7 @@
             <h1 class="h3 display">Administración de Clientes</h1>
           </header>
           <div class="row" style="padding: 10px 0px;">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: flex;margin-left: auto;margin-right: 15px;">
+            <button id="new" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: flex;margin-left: auto;margin-right: 15px;">
               Nuevo Cliente
             </button>
           </div>
@@ -132,8 +132,8 @@
                           <td>132</td>
                           <td>12/8/8</td>
                           <td>
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Editar</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
+                            <button class="btn btn-warning edit" data-toggle="modal" data-target="#exampleModal">Editar</button>
+                            <button class="btn btn-danger delete" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                           </td>
                         </tr>
                         <tr>
@@ -147,8 +147,8 @@
                           <td>132</td>
                           <td>12/8/8</td>
                           <td>
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Editar</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
+                            <button class="btn btn-warning edit" data-toggle="modal" data-target="#exampleModal">Editar</button>
+                            <button class="btn btn-danger delete" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                           </td>
                         </tr>
                         <tr>
@@ -162,8 +162,8 @@
                           <td>132</td>
                           <td>12/8/8</td>
                           <td>
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Editar</button>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
+                            <button class="btn btn-warning edit" data-toggle="modal" data-target="#exampleModal">Editar</button>
+                            <button class="btn btn-danger delete" data-toggle="modal" data-target="#deleteModal">Eliminar</button>
                           </td>
                         </tr>
                       </tbody>
@@ -246,7 +246,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button id="guardar" type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
@@ -284,5 +284,6 @@
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
+    <script src="js/cliente.js"></script>
   </body>
 </html>
