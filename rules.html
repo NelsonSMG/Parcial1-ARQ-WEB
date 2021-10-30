@@ -104,6 +104,7 @@
                   <h4>Reglas de asignación</h4>
                 </div>
                 <div class="card-body">
+                  <!--
                   <div class="table-responsive">
                     <table class="table table-striped table-sm">
                       <thead>
@@ -154,6 +155,24 @@
                       </tbody>
                     </table>
                   </div>
+                  -->
+                  <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Límite Inferior</th>
+                          <th>Límite Superior</th>
+                          <th>Monto</th>
+                          <th>Puntos</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody id="rulesTable">
+                      <!-- Se carga el json aquí -->
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <div class="card-footer">
                   <p>
@@ -195,7 +214,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Límite Superior</label>
-                    <input type="number" class="form-control" id="inputPassword4" placeholder="Si se deja vacío, no se tendrá limite">
+                    <input type="number" class="form-control" id="inputPassword4" placeholder="">
                   </div>
                 </div>
                 <div class="form-row">
