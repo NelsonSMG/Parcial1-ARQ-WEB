@@ -1,4 +1,3 @@
-//
 
 var action = "";
 
@@ -17,8 +16,9 @@ $(document).ready(function () {
         url: "http://localhost:8080/fidelus/regla",
         crossDomain: true,
         contentType: "application/json; charset=utf-8", 
-        dataType: 'jsonp', // added data type
+        dataType: 'json', // added data type
         success: function(res) {
+            console.log("Peticion funcional");
             console.log(res);
             alert(res);
         }
