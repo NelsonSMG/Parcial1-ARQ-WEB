@@ -93,7 +93,7 @@
             <h1 class="h3 display">Administración de Reglas</h1>
           </header>
           <div class="row" style="padding: 10px 0px;">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: flex;margin-left: auto;margin-right: 15px;">
+            <button id="new" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: flex;margin-left: auto;margin-right: 15px;">
               Nueva Regla
             </button>
           </div>
@@ -209,22 +209,22 @@
               <form>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Límite Inferior</label>
-                    <input type="number" class="form-control" id="inputEmail4">
+                    <label for="limInf">Límite Inferior</label>
+                    <input type="text" class="form-control" id="limInf">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Límite Superior</label>
-                    <input type="number" class="form-control" id="inputPassword4" placeholder="">
+                    <label for="limMax">Límite Superior</label>
+                    <input type="text" class="form-control" id="limMax" placeholder="">
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Monto</label>
-                    <input type="number" class="form-control" id="inputPassword4">
+                    <label for="amount">Monto</label>
+                    <input type="text" class="form-control" id="amount">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Puntos</label>
-                    <input type="number" class="form-control" id="inputPassword4">
+                    <label for="points">Puntos</label>
+                    <input type="text" class="form-control" id="points" value="1">
                   </div>
                 </div>
               </form>
@@ -234,7 +234,7 @@
             </div>
             <div class="modal-footer">             
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button id="guardar" type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>
