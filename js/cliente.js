@@ -4,6 +4,7 @@ var action = "";
 
 function cargarDatos(){
     console.log("Cargar datos clientes");
+    $("#clientsTable").empty();
 
     $.ajax({
         method: "GET",
@@ -17,7 +18,7 @@ function cargarDatos(){
             console.log(res);
 
             $.each(res, function(i, f){
-                var tableRow = "<tr>"+
+                var tableRow = "<tr id="+f.id+" >"+
                             "<th scope='row'>"+f.id+"</th>" +
                             "<td>"+f.nombre+"</td>" +
                             "<td>"+f.apellido+"</td>" +
@@ -70,10 +71,10 @@ $(document).ready(function () {
             dataType: 'json', // added data type
             success: function(res) {
                 console.log("DELETE funcional");
-                loadRules();
+                cargarDatos();
             },
             error: function () {
-                loadRules();
+                cargarDatos();
             }
         });
 
@@ -113,10 +114,10 @@ $(document).ready(function () {
             dataType: 'json', // added data type
             success: function(res) {
                 console.log("POST funcional");
-                loadRules();
+                cargarDatos();
             },
             error: function () {
-                loadRules();
+                cargarDatos();
             }
         });
 
