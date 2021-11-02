@@ -4,12 +4,6 @@ var action = "";
 
 function cargarDatos(){
     console.log("Cargar datos clientes");
-};
-
-
-$(document).ready(function () {
-
-    console.log("Listar clientes");
 
     $.ajax({
         method: "GET",
@@ -45,6 +39,15 @@ $(document).ready(function () {
         }
     });
 
+};
+
+
+$(document).ready(function () {
+
+    console.log("Listar clientes");
+
+    cargarDatos();
+
 
     $('#new').on('click', function (e) {
 
@@ -53,10 +56,28 @@ $(document).ready(function () {
     });
 
 
-    $('.delete').on('click', function (e) {
-
+    $(document).on('click', '.delete', function (e) {
         console.log("Eliminar");
-        
+        var id = $(e.target).closest("tr").attr('id');
+        console.log(id);        
+
+        $.ajax({
+            method: "DELETE",
+            type: "DELETE",
+            url: "http://localhost:8080/fidelus/cliente/"+id,
+            crossDomain: true,
+            contentType: "application/json; charset=utf-8", 
+            dataType: 'json', // added data type
+            success: function(res) {
+                console.log("DELETE funcional");
+                loadRules();
+            },
+            error: function () {
+                loadRules();
+            }
+        });
+
+
     });
 
 
@@ -70,6 +91,34 @@ $(document).ready(function () {
     $('#guardar').on('click', function (e) {
 
         console.log(action);
+
+        body = {
+            "apellido": document.getElementById('name').value,
+            "nombre": document.getElementById('lastName').value,
+            "nroDocumento": document.getElementById('doc').value,
+            "tipoDocumento": document.getElementById('docType').value,
+            "nacionalidad": document.getElementById('country').value,
+            "email": document.getElementById('mail').value,
+            "telefono": document.getElementById('phone').value,
+            "fechaNacimiento": document.getElementById('dateBirth').value
+        }
+
+        $.ajax({
+            method: "POST",
+            type: "POST",
+            url: "http://localhost:8080/fidelus/cliente",
+            data:  JSON.stringify(body),
+            crossDomain: true,
+            contentType: "application/json; charset=utf-8", 
+            dataType: 'json', // added data type
+            success: function(res) {
+                console.log("POST funcional");
+                loadRules();
+            },
+            error: function () {
+                loadRules();
+            }
+        });
 
     });
 
