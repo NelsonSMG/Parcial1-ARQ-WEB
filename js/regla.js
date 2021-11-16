@@ -71,6 +71,9 @@ $(document).ready(function () {
     $('#new').on('click', function (e) {
         console.log("Nuevo");
         action = "new"
+        document.getElementById('limInf').value = "";
+        document.getElementById('limMax').value = "";
+        document.getElementById('amount').value = "";
     });
 
     
