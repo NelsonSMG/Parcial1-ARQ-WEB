@@ -21,7 +21,7 @@ $(document).ready(function () {
     });
 
     $('#nav-vence-tab').on('click', function (e) {
-        url = "http://localhost:8080/fidelus/cliente";
+        url = "http://localhost:8080/fidelus/cliente/";
         tab = "3";
         
     });
@@ -72,6 +72,9 @@ $(document).ready(function () {
         } else if (tab == "3") {
 
             console.log("Clientes con Puntos a vencer");
+
+            var days = document.getElementById('days').value;
+            url = url + "vencer?dias=" + days;
 
         } else if (tab == "4") {
 
