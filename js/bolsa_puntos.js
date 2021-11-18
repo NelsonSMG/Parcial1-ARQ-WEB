@@ -38,4 +38,31 @@ $(document).ready(function () {
     console.log("Pagina de bolsa");
 
     loadBolsa();
+    $('#guardar').on('click', function (e) {
+
+        console.log(action);
+
+        body = {
+            "idCliente": document.getElementById('bCliente').value,
+            "monto": document.getElementById('bMonto').value
+        }
+
+        $.ajax({
+            method: "POST",
+            type: "POST",
+            url: "http://localhost:8080/fidelus/bolsa-puntos",
+            data:  JSON.stringify(body),
+            crossDomain: true,
+            contentType: "application/json; charset=utf-8", 
+            dataType: 'json', // added data type
+            success: function(res) {
+                console.log("POST funcional");
+                loadBolsa();
+            },
+            error: function () {
+                loadBolsa();
+            }
+        });
+
+    });
 });
