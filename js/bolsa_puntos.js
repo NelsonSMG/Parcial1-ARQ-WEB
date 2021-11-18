@@ -1,4 +1,3 @@
-var action = "";
 
 
 function loadBolsa(){
@@ -38,4 +37,35 @@ $(document).ready(function () {
     console.log("Pagina de bolsa");
 
     loadBolsa();
+
+//GUARDAR
+$('#guardar').on('click', function (e) {
+
+    console.log("confirmar nuevo registro");
+
+    var idCliente = document.getElementById('idClient').value;
+    var monto = document.getElementById('amount').value;
+
+    $.ajax({
+        method: "POST",
+        type: "POST",
+        url: "http://localhost:8080/fidelus/bolsa-puntos?idCliente="+idCliente+"&monto="+monto,
+        crossDomain: true,
+        contentType: "application/json; charset=utf-8", 
+        dataType: 'json', // added data type
+        success: function(res) {
+            console.log("POST funcional");
+            loadBolsa();
+        },
+        error: function () {
+            loadBolsa();
+        }
+    });
+
+    
+
+
+});
+
+
 });
