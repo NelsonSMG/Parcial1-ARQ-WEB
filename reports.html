@@ -96,43 +96,104 @@
             <div class="card-header">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">USO DE PUNTOS</a>
-                    <a class="nav-link" id="nav-bolsa-tab" data-toggle="tab" href="#nav-bolsa" role="tab" aria-controls="nav-profile" aria-selected="false">BOLSA DE PUNTOS</a>
-                    <a class="nav-link" id="nav-vence-tab" data-toggle="tab" href="#nav-vence" role="tab" aria-controls="nav-vence" aria-selected="false">VENCIMIENTO</a>
-                    <a class="nav-link" id="nav-client-tab" data-toggle="tab" href="#nav-client" role="tab" aria-controls="nav-client" aria-selected="false">CLIENTES</a>
+                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Uso de puntos</a>
+                    <a class="nav-link" id="nav-bolsa-tab" data-toggle="tab" href="#nav-bolsa" role="tab" aria-controls="nav-profile" aria-selected="false">Bolsa de puntos</a>
+                    <a class="nav-link" id="nav-vence-tab" data-toggle="tab" href="#nav-vence" role="tab" aria-controls="nav-vence" aria-selected="false">Clientes con Puntos a vencer</a>
+                    <a class="nav-link" id="nav-client-tab" data-toggle="tab" href="#nav-client" role="tab" aria-controls="nav-client" aria-selected="false">Consulta de clientes</a>
                     </div>
                 </nav>
+                <br>
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <select class="custom-select">
+                        <select id="usoPuntosSelect" class="custom-select">
                             <option selected>Seleccione el filtro</option>
                             <option value="1">Concepto de uso</option>
                             <option value="2">Fecha de uso</option>
                             <option value="3">Cliente</option>
                         </select>
+                        
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <label for="idConceptUse">Id Concepto</label>
+                                <input type="text" class="form-control" id="idConceptUse">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="useDate">Fecha</label>
+                                <input type="date" class="form-control" id="useDate">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="idClientUse">Id Cliente</label>
+                                <input type="text" class="form-control" id="idClientUse">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+
                     </div>
                     <div class="tab-pane fade" id="nav-bolsa" role="tabpanel" aria-labelledby="nav-bolsa-tab">
-                        <select class="custom-select">
+                        <select id="bolsaPuntosSelect" class="custom-select">
                             <option selected>Seleccione el filtro</option>
                             <option value="1">Cliente</option>
                             <option value="2">Rango de puntos</option>
-                        </select> 
+                        </select>
+                        
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <label for="idClientPoints">Id Cliente</label>
+                                <input type="text" class="form-control" id="idClientPoints">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="limInf">Límite Inferior</label>
+                                <input type="text" class="form-control" id="limInf">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="limMax">Límite Superior</label>
+                                <input type="text" class="form-control" id="limMax">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+
                     </div>
                     <div class="tab-pane fade" id="nav-vence" role="tabpanel" aria-labelledby="nav-vence-tab">
                         <p>No tiene filtros</p>
                     </div>
                     <div class="tab-pane fade" id="nav-client" role="tabpanel" aria-labelledby="nav-client-tab">
-                        <select class="custom-select">
+                        <select id="clienteSelect" class="custom-select">
                             <option selected>Seleccione el filtro</option>
                             <option value="1">Nombre</option>
                             <option value="2">Apellido</option>
-                            <option value="2">Cumpleaños</option>
+                            <option value="3">Cumpleaños</option>
                         </select> 
+                        
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <label for="clientName">Nombre</label>
+                                <input type="text" class="form-control" id="clientName">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="clientLast">Apellido</label>
+                                <input type="text" class="form-control" id="clientLast">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="clientDate">Cumpleaños</label>
+                                <input type="date" class="form-control" id="clientDate">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="card-body">
-              <a href="#" class="btn btn-primary">Generar reporte</a>
+              <a id="generate" href="#" class="btn btn-primary">Generar reporte</a>
             </div>
           </div>
           <!--<div class="row">
@@ -169,5 +230,6 @@
     <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
+    <script type="text/javascript" src="js/reports.js"></script>
   </body>
 </html>
