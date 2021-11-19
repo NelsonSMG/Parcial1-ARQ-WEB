@@ -63,10 +63,12 @@ $(document).ready(function () {
             option = $('#bolsaPuntosSelect').val(); 
 
             if (option == 1){
-
+                var idCliente = document.getElementById('idClientPoints').value;
+                url = url + "?idCliente=" + idCliente
             }  else {
-                var idCliente = document.getElementById('idClient').value;
-                var monto = document.getElementById('amount').value;
+                var limI = document.getElementById('limInf').value;
+                var limS = document.getElementById('limMax').value;
+                url = url + "?rangoInicio=" + limI +"&rangoFin=" + limS
             }
 
         } else if (tab == "3") {
@@ -82,11 +84,14 @@ $(document).ready(function () {
             option = $('#clienteSelect').val(); 
 
             if (option == 1){
-
+                var nombre = document.getElementById('clientName').value;
+                url = url + "?nombre=" + nombre
             }   else if (option == 2) {
-
+                var apellido = document.getElementById('clientLast').value;
+                url = url + "?apellido=" + apellido
             }   else {
-
+                var cumple = document.getElementById('clientDate').value;
+                url = url + "?fechaNacimiento=" + cumple
             }
 
         };
