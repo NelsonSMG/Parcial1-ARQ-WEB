@@ -214,22 +214,21 @@
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Por fecha de canje</h4>
+                    <h4 id="reportTitle">Por fecha de canje</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-striped table-sm">
                         <thead>
                           <tr>
-                            <th>ID</th>
-                            <th>Límite Inferior</th>
-                            <th>Límite Superior</th>
-                            <th>Monto</th>
-                            <th>Puntos</th>
-                            <th>Acciones</th>
+                            <th>Id</th>
+                            <th>Fecha</th>
+                            <th>Id Cliente</th>
+                            <th>Id Concepto</th>
+                            <th>Puntaje Utilizado</th>
                           </tr>
                         </thead>
-                        <tbody id="rulesTable">
+                        <tbody id="reportDate">
                         <!-- Se carga el json aquí -->
                         </tbody>
                       </table>
@@ -238,45 +237,6 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Por Concepto de uso</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table table-striped table-sm">
-                        <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Id cliente</th>
-                            <th>Fecha de uso</th>
-                            <th>Puntaje utilizado</th>
-                            <th>Id concepto</th>
-                          </tr>
-                        </thead>
-                        <tbody id="reportConcepto">
-                        <!-- Se carga el json aquí -->
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--<div class="row">
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-header d-flex align-items-center">
-                  <h4>Ingrese monto a convertir.</h4>
-                </div>
-                <div class="card-body">
-                 
-                </div>
-              </div>
-            </div>-->
           </div>
         </div>
       </section>

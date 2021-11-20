@@ -3,6 +3,43 @@ var url = "http://localhost:8080/fidelus/canje-puntos/listar/";
 var tab = "1";
 var option = "";
 
+function loadDate(data){
+
+    if (tab == "1") {
+
+        var nombre = document.getElementById('reportTitle');
+
+        if (option == 1){
+
+            nombre.innerHTML="Por Concepto de uso";
+
+        }   else if (option == 2) {
+
+            nombre.innerHTML="Por fecha de canje";
+
+        }   else { 
+
+            nombre.innerHTML="Por Cliente";
+            
+        }
+
+        $.each(data, function(i, f){
+            var tableRow = "<tr>"+
+                        "<th scope='row'>"+f.id+"</th>" +
+                        "<td>"+f.fechaUso+"</td>" +
+                        "<td>"+f.idCliente+"</td>" +
+                        "<td>"+f.idConcepto+"</td>" +
+                        "<td>"+f.puntajeUtilizado+"</td>" +
+                      "</tr>";
+    
+            $(tableRow).appendTo("#reportDate");
+        });
+
+    }
+
+    
+}
+
 $(document).ready(function () {
 
     console.log("Página de reportes");
@@ -45,32 +82,10 @@ $(document).ready(function () {
             option = $('#usoPuntosSelect').val(); 
 
             if (option == 1){
-                //id: 1, idCliente: 7, fechaUso: 1637377200000, puntajeUtilizado: 10, idConcepto: 7
                 $("#reportConcepto").empty();
                 var idConceptUse = document.getElementById('idConceptUse').value;
-                $.ajax({
-                    method: "GET",
-                    type: "GET",
-                    url: url + "concepto?idConcepto=" + idConceptUse,
-                    crossDomain: true,
-                    contentType: "application/json; charset=utf-8", 
-                    dataType: 'json', 
-                    success: function(res) {
-                        $.each(res, function(i, f){
-                            var tableRow = "<tr id="+f.id+" >"+
-                                        "<th scope='row'>"+f.id+"</th>" +
-                                        "<td>"+f.idCliente+"</td>" +     
-                                        "<td>"+f.fechaUso+"</td>" +
-                                        "<td>"+f.puntajeUtilizado+"</td>" +
-                                        "<td>"+f.idConcepto+"</td>" +
-                                      "</tr>";
-            
-                            $(tableRow).appendTo("#reportConcepto");
-                        });
-            
-                    }
-                });
-
+                url = url + "concepto?idConcepto=" + idConceptUse;
+                
             }   else if (option == 2) {
                 var useDate = document.getElementById('useDate').value;
                 url = url + "fecha-uso?fechaCanje=" + useDate;
@@ -133,13 +148,12 @@ $(document).ready(function () {
             success: function(res) {
                 
                 console.log(res)
+                loadDate(res)
     
             }
         });
 
         url = baseUrl;
-
-        //GET Request
 
 
     });
